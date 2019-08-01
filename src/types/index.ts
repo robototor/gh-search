@@ -13,3 +13,8 @@ export interface Repo {
   description: string;
   owner: User;
 }
+
+export interface Branch {
+  name: string;
+  protected: boolean;
+}
