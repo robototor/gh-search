@@ -4,7 +4,7 @@ import makeApi from 'hooks/useApi';
 import { CircularProgress, createStyles } from '@material-ui/core';
 import { setBranches } from 'stores/branches';
 import { BranchList } from 'components/branches';
-import { makeStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 const useApi = makeApi<Branch[]>({}, []);
 

@@ -5,8 +5,8 @@ import useDebounce from 'hooks/useDebounce';
 import makeApi from 'hooks/useApi';
 import { AppBar, Toolbar, Typography, InputBase } from '@material-ui/core';
 import { Search } from '@material-ui/icons';
-import { setRepos } from 'stores/repos';
-import searchStore, { setSearch, setLoading } from 'stores/search';
+import { setRepos, setLoading } from 'stores/repos';
+import searchStore, { setSearch } from 'stores/search';
 import { createStyles, fade, Theme, makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -53,7 +53,7 @@ interface Props {
 }
 
 const Header: React.FC<Props> = ({ className }) => {
-  const { search } = useStore(searchStore);
+  const search = useStore(searchStore);
   const debouncedSearch = useDebounce(search, 300);
   const { loading, data, request } = useApi();
   const classes = useStyles();
