@@ -1,15 +1,14 @@
 import React, { memo } from 'react';
 import { Repo } from 'types';
-import { ListItem, Avatar, ListItemText, Typography, Grid } from '@material-ui/core';
+import { Avatar, ListItemText, Typography, Grid } from '@material-ui/core';
 
 interface Props {
-  className?: string;
-  repo: Repo
+  repo: Repo;
 }
 
-const RepoItem: React.FC<Props> = ({ className, repo }) => (
-  <ListItem className={className} alignItems="flex-start">
-    <Grid container justify="space-between" alignItems="center">
+const RepoSummary: React.FC<Props> = ({ repo }) => (
+  <>
+    <Grid container justify="space-between" alignItems="center" spacing={2} wrap="nowrap">
       <Grid item>
         <ListItemText
           primary={
@@ -33,7 +32,7 @@ const RepoItem: React.FC<Props> = ({ className, repo }) => (
         </Grid>
       </Grid>
     </Grid>
-  </ListItem>
+  </>
 );
 
-export default memo(RepoItem);
+export default memo(RepoSummary);
