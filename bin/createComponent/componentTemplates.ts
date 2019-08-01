@@ -1,5 +1,4 @@
-const getComponent = (name: string) => `// Global
-import React, { memo } from 'react';
+const getComponent = (name: string) => `import React, { memo } from 'react';
 
 interface Props {
   className?: string;
