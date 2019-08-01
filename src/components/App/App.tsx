@@ -1,21 +1,29 @@
-import React, { memo } from 'react';
-import { Paper } from '@material-ui/core';
+import React from 'react';
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import { RepoList } from '../repos';
 import { Header } from '..';
 
-interface Props {
-  className?: string;
-}
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    content: {
+      padding: theme.spacing(3, 2),
+      width: 940,
+      margin: 'auto'
+    }
+  })
+);
 
-const App: React.FC<Props> = ({ className }) => {
+const App: React.FC = () => {
+  const classes = useStyles();
+
   return (
-    <div className={className}>
+    <div>
       <Header />
-      <Paper>
+      <div className={classes.content}>
         <RepoList />
-      </Paper>
+      </div>
     </div>
   );
 };
 
-export default memo(App);
+export default App;
