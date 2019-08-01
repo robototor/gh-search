@@ -146,5 +146,8 @@
     "mkdirp": "^0.5.1",
     "rimraf": "^2.6.3",
     "yargs": "^13.3.0"
+  },
+  "peerDependencies": {
+    "lodash": "^4.17.15"
   }
 }
